@@ -1,0 +1,139 @@
+// класс Person
+class Person
+{
+public:
+Person(const char* firstname, int firstname_length, const char* surname, int surname_length, const char* lastname, int lastname_length,
+const char* country, int country_length, const char* region, int region_length, const char* city, int city_length,
+const char* street, int street_length, int house_number, int birth_day, int birth_month, int birth_year);
+~Person();
+// геттеры/сеттеры
+const char* getFirstname() const;
+void setFirstname(const char* firstname, int firstname_length);
+const char* getSurname() const;
+void setSurname(const char* surname, int surname_length);
+const char* getLastname() const;
+void setLastname(const char* lastname, int lastname_length);
+const char* getCountry() const;
+void setCountry(const char* country, int country_length);
+const char* getRegion() const;
+void setRegion(const char* region, int region_length);
+const char* getCity() const;
+void setCity(const char* city, int city_length);
+const char* getStreet() const;
+void setStreet(const char* street, int street_length);
+int getHouseNumber() const;
+void setHouseNumber(int house_number);
+const Date& getBirthDate() const;
+private:
+char* firstname_;
+int firstname_length_;
+char* surname_;
+int surname_length_;
+char* lastname_;
+int lastname_length_;
+char* country_;
+int country_length_;
+char* region_;
+int region_length_;
+char* city_;
+int city_length_;
+char* street_;
+int street_length_;
+int house_number_;
+Date birth_date_;
+};
+
+// класс Group
+class Group
+{
+public:
+Group(const char* name, int name_length, const char* specialization, int specialization_length, int students_count);
+~Group();
+// геттеры/сеттеры
+const char* getName() const;
+void setName(const char* name, int name_length);
+const char* getSpecialization() const;
+void setSpecialization(const char*
+// Класс для работы с датами
+class Date
+{
+public:
+    Date(int day, int month, int year) : day_(day), month_(month), year_(year) {}
+
+    int day() const { return day_; }
+    void set_day(int day) { day_ = day; }
+
+    int month() const { return month_; }
+    void set_month(int month) { month_ = month; }
+
+    int year() const { return year_; }
+    void set_year(int year) { year_ = year; }
+
+private:
+    int day_;
+    int month_;
+    int year_;
+};
+
+// Класс для работы с оценками
+class Rate
+{
+public:
+    Rate(int value, const std::string& type) : value_(value), type_(type) {}
+
+    int value() const { return value_; }
+    void set_value(int value) { value_ = value; }
+
+    std::string type() const { return type_; }
+    void set_type(const std::string& type) { type_ = type; }
+
+private:
+    int value_;
+    std::string type_;
+};
+
+// Класс для работы с коллекцией оценок
+class RateCollection
+{
+public:
+    RateCollection() {}
+
+    void add_rate(const Rate& rate) { rates_.push_back(rate); }
+    void change_rate(int index, const Rate& rate) { rates_[index] = rate; }
+    void delete_rate(int index) { rates_.erase(rates_.begin() + index); }
+
+    int size() const { return rates_.size(); }
+    Rate get_rate(int index) const { return rates_[index]; }
+
+private:
+    std::vector<Rate> rates_;
+};
+
+// Класс для работы со студентом
+class Student
+{
+public:
+    Student(const std::string& firstname, const std::string& surname, const std::string& lastname, const std::string& country,
+            const std::string& region, const std::string& city, const std::string& street, int house_number,
+            const Date& birth_date, const std::string& znak_zodiaka, const Date& start_date, int kurs, const std::string& group_name,
+            const std::string& specialization, int students_count)
+        : firstname_(firstname), surname_(surname), lastname_(lastname), country_(country), region_(region), city_(city),
+          street_(street), house_number_(house_number), birth_date_(birth_date), znak_zodiaka_(znak_zodiaka),
+          start_date_(start_date), kurs_(kurs), group_name_(group_name), specialization_(specialization),
+          students_count_(students_count) {}
+
+    std::string firstname() const { return firstname_; }
+    void set_firstname(const std::string& firstname) { firstname_ = firstname; }
+
+    std::string surname() const { return surname_; }
+    void set_surname(const std::string& surname) { surname_ = surname; }
+
+    std::string lastname() const { return lastname_; }
+    void set_lastname(const std::string& lastname) { lastname_ = lastname; }
+
+    std::string country() const { return country_; }
+    void set_country(const std::string& country) { country_ = country; }
+
+    std::string region() const { return region_; }
+    void set_region(const std::string& region;
+};
